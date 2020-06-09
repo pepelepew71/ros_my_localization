@@ -1,0 +1,11 @@
+# -- This no datum condition is used with ros_gps_nav package
+frequency: 1
+delay: 3.0
+magnetic_declination_radians: -0.0815260747  # For lat/long 25.013508/121.547344
+zero_altitude: true
+# yaw_offset: 1.570796327  # IMU reads 0 facing magnetic north, not east
+broadcast_utm_transform: true
+broadcast_utm_transform_as_parent_frame: true
+publish_filtered_gps: true
+use_odometry_yaw: false
+wait_for_datum: true

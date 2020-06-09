@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+    <!-- # robot localization tf odom -> base_link -->
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_odom" clear_params="true" output="screen">
+        <rosparam file="$(find ros_my_localization)/config/ekf_odom.yaml" command="load" />
+        <remap from="odometry/filtered" to="odometry/filtered_odom" />
+    </node>
+
+</launch>

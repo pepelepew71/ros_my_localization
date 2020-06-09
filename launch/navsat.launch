@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+    <!-- # arg -->
+    <arg name="has_datum" default="true" />
+
+    <!-- # robot localization tf utm -> map -->
+    <node pkg="robot_localization" type="navsat_transform_node" name="navsat" clear_params="true" output="screen">
+
+        <rosparam if="$(arg has_datum)" file="$(find ros_my_localization)/config/navsat.yaml" command="load" />
+        <rosparam unless="$(arg has_datum)" file="$(find ros_my_localization)/config/navsat_no_datum.yaml" command="load" />
+
+        <remap from="/odometry/filtered" to="odometry/filtered_map" />
+        <remap from="/gps/fix" to="/gps_fix" />
+        <remap from="/imu/data" to="/imu" />
+
+    </node>
+
+</launch>

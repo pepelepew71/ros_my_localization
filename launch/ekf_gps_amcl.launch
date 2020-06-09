@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+    <!-- # robot localization tf map -> odom -->
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_map_gps_amcl" clear_params="true" output="screen">
+        <rosparam file="$(find ros_my_localization)/config/ekf_gps_amcl.yaml" command="load" />
+        <remap from="odometry/filtered" to="odometry/filtered_map" />
+    </node>
+
+</launch>
