@@ -3,7 +3,7 @@
 <launch>
 
     <!-- # arg -->
-    <arg name="path_yaml" default="$(find ros_my_localization)/config/navsat.yaml" />
+    <arg name="path_yaml" default="" />
 
     <!-- # robot localization tf utm -> map -->
     <node pkg="robot_localization" type="navsat_transform_node" name="navsat" clear_params="true" output="screen">

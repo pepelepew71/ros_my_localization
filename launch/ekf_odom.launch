@@ -3,7 +3,7 @@
 <launch>
 
     <!-- # args -->
-    <arg name="path_yaml" default="$(find ros_my_localization)/config/ekf_odom.yaml" />
+    <arg name="path_yaml" default="" />
 
     <!-- # robot localization tf odom -> base_link -->
     <node pkg="robot_localization" type="ekf_localization_node" name="ekf_odom" clear_params="true" output="screen">

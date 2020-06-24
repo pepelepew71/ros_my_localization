@@ -3,15 +3,19 @@
 <launch>
 
     <!-- # arg -->
-    <arg name="name_imu" default="/imu" />
-    <arg name="name_set_pose" default="" />
-    <arg name="name_frame" default="" />
+    <arg name="topic_imu" default="/imu" />
+    <arg name="service_set_pose_odom" default="" />
+    <arg name="service_set_pose_map" default="" />
+    <arg name="frame_id_odom" default="" />
+    <arg name="frame_id_map" default="" />
 
     <!-- # init_state -->
-    <node pkg="ros_my_localization" type="init_yaw.py" name="init_yaw" output="screen">
-        <param name="name_imu" value="$(arg name_imu)" />
-        <param name="name_set_pose" value="$(arg name_set_pose)" />
-        <param name="name_frame" value="$(arg name_frame)" />
+    <node pkg="ros_my_localization" type="init_yaw.py" name="init_yaw" clear_params="true" output="screen">
+        <param name="topic_imu" value="$(arg topic_imu)" />
+        <param name="service_set_pose_odom" value="$(arg service_set_pose_odom)" />
+        <param name="service_set_pose_map" value="$(arg service_set_pose_map)" />
+        <param name="frame_id_odom" value="$(arg frame_id_odom)" />
+        <param name="frame_id_map" value="$(arg frame_id_map)" />
     </node>
 
 </launch>

@@ -3,7 +3,7 @@
 <launch>
 
     <!-- # args -->
-    <arg name="path_yaml" default="$(find ros_my_localization)/config/ekf_gps_amcl.yaml" />
+    <arg name="path_yaml" default="" />
 
     <!-- # robot localization tf map -> odom -->
     <node pkg="robot_localization" type="ekf_localization_node" name="ekf_map_gps_amcl" clear_params="true" output="screen">
