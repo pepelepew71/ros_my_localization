@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+    <!-- # arg -->
+    <arg name="name_imu" default="/imu" />
+    <arg name="name_set_pose" default="" />
+    <arg name="name_frame" default="" />
+
+    <!-- # init_state -->
+    <node pkg="ros_my_localization" type="init_yaw.py" name="init_yaw" output="screen">
+        <param name="name_imu" value="$(arg name_imu)" />
+        <param name="name_set_pose" value="$(arg name_set_pose)" />
+        <param name="name_frame" value="$(arg name_frame)" />
+    </node>
+
+</launch>

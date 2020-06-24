@@ -9,6 +9,7 @@
     <node pkg="robot_localization" type="ekf_localization_node" name="ekf_odom" clear_params="true" output="screen">
         <rosparam file="$(arg path_yaml)" command="load" />
         <remap from="odometry/filtered" to="odometry/filtered_odom" />
+        <remap from="set_pose" to="ekf_odom/set_pose" />
     </node>
 
 </launch>
