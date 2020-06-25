@@ -62,15 +62,15 @@ def cb_service(request):
 
 if __name__ == "__main__":
 
-    rospy.init_node(name='init_yaw', anonymous=False)
+    rospy.init_node(name='init_state', anonymous=False)
 
     # -- Get parameters
-    NAME_IMU = rospy.get_param(param_name="~topic_imu", default="/imu")
+    NAME_IMU = rospy.get_param(param_name="~top_imu", default="/imu")
 
-    name_set_pose_odom = rospy.get_param(param_name="~service_set_pose_odom", default="")
+    name_set_pose_odom = rospy.get_param(param_name="~srv_set_pose_odom", default="")
     NAME_FRAME_ID_ODOM = rospy.get_param(param_name="~frame_id_odom", default="")
 
-    name_set_pose_map = rospy.get_param(param_name="~service_set_pose_map", default="")
+    name_set_pose_map = rospy.get_param(param_name="~srv_set_pose_map", default="")
     NAME_FRAME_ID_MAP = rospy.get_param(param_name="~frame_id_map", default="")
 
     # -- Get ServiceProxy

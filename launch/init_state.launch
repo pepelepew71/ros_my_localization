@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+    <!-- # arg -->
+    <arg name="top_imu" default="/imu" />
+    <arg name="srv_set_pose_odom" default="" />
+    <arg name="srv_set_pose_map" default="" />
+    <arg name="frame_id_odom" default="" />
+    <arg name="frame_id_map" default="" />
+
+    <!-- # init_state -->
+    <node pkg="ros_my_localization" type="init_state.py" name="init_state" clear_params="true" output="screen">
+        <param name="top_imu" value="$(arg top_imu)" />
+        <param name="srv_set_pose_odom" value="$(arg srv_set_pose_odom)" />
+        <param name="srv_set_pose_map" value="$(arg srv_set_pose_map)" />
+        <param name="frame_id_odom" value="$(arg frame_id_odom)" />
+        <param name="frame_id_map" value="$(arg frame_id_map)" />
+    </node>
+
+</launch>
